@@ -81,7 +81,24 @@ public class SinglyLinkList {
     }
 
     public int get(int index) {
-        return -1;
+        if(empty()){
+            throw new RuntimeException("Cannot get item from empty Link List");
+        }
+        if(index > size()-1 || index < 0){
+            throw new RuntimeException("Index Error");
+        }
+        Node current = first;
+        int count = 0;
+        int value = 0;
+
+        while(current != null){
+            if(count == index){
+                value = current.getValue();
+            }
+            current = current.getNext();
+            count++;
+        }
+        return value;
     }
 
     public void print() {

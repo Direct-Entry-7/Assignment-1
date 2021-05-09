@@ -31,8 +31,12 @@ public class SinglyLinkListTest {
 //        linkList.print();
 //        linkList.add(1,11111);
 //        linkList.print();
-        linkList.remove(0);
-        linkList.print();
-        System.out.println(linkList.size());
+//        linkList.remove(0);
+//        linkList.print();
+//        System.out.println(linkList.size());
+        System.out.println(linkList.get(0));
+        System.out.println(linkList.get(4));
+//        System.out.println(linkList.get(-1));
+//        System.out.println(linkList.get(5));
     }
 }
