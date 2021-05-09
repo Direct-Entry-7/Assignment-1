@@ -21,28 +21,62 @@ public class SinglyLinkList {
     public void add(int index, int number) {
         if (index > size() - 1 || index < 0) {
             throw new RuntimeException("Invalid index");
+        }
+        Node node = new Node(number);
+        if (index == 0) {
+            node.setNext(first);
+            first = node;
         } else {
-            Node node = new Node(number);
+            Node current = first;
+            int count = 0;
+            while (current != null) {
+                if (count == index - 1) {
+                    node.setNext(current.getNext());
+                    current.setNext(node);
+                    break;
+                }
+                current = current.getNext();
+                count++;
+            }
+        }
+
+        this.size++;
+    }
+
+    public void remove(int index) {
+        if (empty()) {
+            throw new RuntimeException("Cannot remove item from empty Link List");
+        } else if (index > size() - 1 || index < 0) {
+            throw new RuntimeException("Invalid Index");
+        } else {
+            Node current = first;
             if (index == 0) {
-                node.setNext(first);
-                first = node;
+                first = current.getNext();
+            } else if (index == size() - 1) {
+                while (current != null) {
+                    if (current.getNext() == last) {
+                        current.setNext(null);
+                        last = current;
+                        break;
+
+                    }
+                    current = current.getNext();
+                }
+
             } else {
-                Node current = first;
                 int count = 0;
                 while (current != null) {
                     if (count == index - 1) {
-                        node.setNext(current.getNext());
-                        current.setNext(node);
-                        break;
+                        Node temp = current.getNext();
+                        current.setNext(temp.getNext());
+                        temp.setNext(null);
                     }
                     current = current.getNext();
                     count++;
                 }
             }
         }
-    }
-
-    public void remove(int index) {
+        size--;
 
     }
 
