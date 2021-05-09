@@ -12,7 +12,7 @@ public class SinglyLinkList {
             first = last = node;
             first.setValue(number);
         }else{
-            first.setNext(node);
+            last.setNext(node);
             last = node;
         }
         this.size++;
@@ -31,9 +31,24 @@ public class SinglyLinkList {
     }
 
     public void print(){
-
+        if(empty()){
+            System.out.println("[]");
+            return;
+        }else{
+            Node current = first;
+            System.out.print("[");
+            while(current != null){
+                System.out.print(current.getValue() + ",");
+                current = current.getNext();
+            }
+            System.out.println("\b]");
+        }
     }
 
+    public void clear(){
+        first = last = null;
+        size = 0;
+    }
     public int size(){
         return this.size;
     }

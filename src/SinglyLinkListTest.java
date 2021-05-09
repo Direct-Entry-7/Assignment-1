@@ -10,5 +10,10 @@ public class SinglyLinkListTest {
         linkList.add(30);
         linkList.add(40);
         linkList.add(50);
+        linkList.print();
+        linkList.clear();
+        linkList.print();
+        System.out.println(linkList.empty());
+        System.out.println(linkList.size());
     }
 }
