@@ -54,7 +54,17 @@ public class SinglyLinkList {
     }
 
     public boolean contains(int number){
-        return false;
+        if(empty()){
+            return false;
+        }
+       Node current = first;
+       while ((current != null)){
+           if(current.getValue() == number){
+               return true;
+           }
+           current = current.getNext();
+       }
+       return false;
     }
 
     public boolean empty(){

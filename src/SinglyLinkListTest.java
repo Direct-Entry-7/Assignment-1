@@ -15,5 +15,12 @@ public class SinglyLinkListTest {
         linkList.print();
         System.out.println(linkList.empty());
         System.out.println(linkList.size());
+        linkList.add(100);
+        linkList.add(200);
+        linkList.add(300);
+        linkList.add(400);
+        linkList.add(500);
+        linkList.print();
+        System.out.println(linkList.contains(100));
     }
 }
