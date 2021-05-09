@@ -27,7 +27,7 @@ public class SinglyLinkListTest {
 //        linkList.add(0,11111);
 //        linkList.print();
 //        linkList.add(4,11111);
-//        linkList.print();import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+//        linkList.print();
 //        linkList.add(1,11111);
 //        linkList.print();
 //        linkList.remove(0);
