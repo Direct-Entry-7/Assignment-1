@@ -3,10 +3,19 @@ package ds;
 public class SinglyLinkList {
     private Node first;
     private Node last;
+    private int size;
 
 
     public void add(int number){
-//        System.out.println(number);
+        Node node = new Node(number);
+        if(empty()){
+            first = last = node;
+            first.setValue(number);
+        }else{
+            first.setNext(node);
+            last = node;
+        }
+        this.size++;
     }
 
     public void add(int index, int number){
@@ -26,7 +35,7 @@ public class SinglyLinkList {
     }
 
     public int size(){
-        return -1;
+        return this.size;
     }
 
     public boolean contains(int number){
@@ -34,6 +43,6 @@ public class SinglyLinkList {
     }
 
     public boolean empty(){
-        return false;
+        return this.size() > 0 ? false : true;
     }
 }
