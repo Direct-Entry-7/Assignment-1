@@ -22,5 +22,13 @@ public class SinglyLinkListTest {
         linkList.add(500);
         linkList.print();
         System.out.println(linkList.contains(100));
+//        linkList.add(-1,11111);
+//        linkList.add(5,11111);
+//        linkList.add(0,11111);
+//        linkList.print();
+//        linkList.add(4,11111);
+//        linkList.print();
+        linkList.add(1,11111);
+        linkList.print();
     }
 }
